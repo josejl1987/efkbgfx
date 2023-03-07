@@ -384,7 +384,7 @@ private:
 								image->m_data, srcbpp, unpack, 
 								image->m_width, image->m_height, image->m_depth, 
 								image->m_width * (srcbpp/8), image->m_width * (dstbpp/8));
-		} else {
+		} else { 
 			dstimage = bimg::imageConvert(entry::getAllocator(), bimg::TextureFormat::RGBA8, *image, false);
 		}
 

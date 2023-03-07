@@ -14,7 +14,7 @@
 #include <EffekseerRendererCommon/ModelLoader.h>
 #include "bgfxrenderer.h"
 
-#define BGFX(api) m_bgfx->api
+#define BGFX(api) m_bgfx->api 
 
 #define MAX_PATH 2048
 #define MaxInstanced 20
@@ -185,7 +185,7 @@ private:
 	// Shader
 	class Shader : public EffekseerRenderer::ShaderBase {
 		friend class RendererImplemented;
-	private:
+	private: 
 		static const int maxUniform = 64;
 		static const int maxSamplers = 8;
 		int m_vcbSize = 0;
