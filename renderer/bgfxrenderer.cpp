@@ -658,7 +658,7 @@ private:
 	Effekseer::Backend::TextureRef m_depth = nullptr;
 	int32_t m_squareMaxCount = 0;
 	int32_t m_indexBufferStride = 2;
-	bgfx_view_id_t m_viewid = 0;
+	bgfx_view_id_t* m_viewid = 0;
 	bgfx_vertex_layout_t m_modellayout;
 
 	struct VertexLayoutInfo {
@@ -1183,14 +1183,14 @@ public:
 		BGFX(encoder_set_transient_vertex_buffer)(m_encoder, 0, &layout.tvb, offset, count);
 		const uint32_t indexCount = count / 4 * 6;
 		BGFX(encoder_set_index_buffer)(m_encoder, m_indexBuffer->GetInterface(), 0, indexCount);
-		BGFX(encoder_submit)(m_encoder, m_viewid, m_currentShader->m_program, 0, BGFX_DISCARD_ALL);
+		BGFX(encoder_submit)(m_encoder, *m_viewid, m_currentShader->m_program, 0, BGFX_DISCARD_ALL);
 	}
 	void DrawPolygon(int32_t vertexCount, int32_t indexCount) {
 		// todo:
 	}
 	void DrawPolygonInstanced(int32_t vertexCount, int32_t indexCount, int32_t instanceCount) {
 		BGFX(encoder_set_instance_count)(m_encoder, instanceCount);
-		BGFX(encoder_submit)(m_encoder, m_viewid, m_currentShader->m_program, 0, BGFX_DISCARD_ALL);
+		BGFX(encoder_submit)(m_encoder, *m_viewid, m_currentShader->m_program, 0, BGFX_DISCARD_ALL);
 	}
 	Shader* GetShader(EffekseerRenderer::RendererShaderType type) const {
 		int n = (int)type;

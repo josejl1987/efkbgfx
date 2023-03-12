@@ -2,7 +2,7 @@
 #define effekseer_bgfx_renderer_h
 
 #include <bgfx/c99/bgfx.h>
-#include <Effekseer/Effekseer.h>
+#include <Effekseer.h>
 #include <EffekseerRendererCommon/EffekseerRenderer.Renderer.h>
 
 #if defined(_MSC_VER) && defined(EFXBGFX_DYNAMIC_LIB)
@@ -30,7 +30,7 @@ namespace EffekseerRendererBGFX {
 
 	struct InitArgs {
 		int squareMaxCount;
-		bgfx_view_id_t viewid;
+		bgfx_view_id_t* viewid;
 		bgfx_interface_vtbl_t *bgfx;
 		bgfx_shader_handle_t (*shader_load)(const char *mat, const char *name, const char *type, void *ud);
 		bgfx_texture_handle_t (*texture_get)(int texture_type, void *parm, void *ud);	// background or depth (with param)
