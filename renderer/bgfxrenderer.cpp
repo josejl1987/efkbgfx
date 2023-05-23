@@ -1,7 +1,6 @@
 #include <cstdint>
 #include <cassert>
 #include <cstring>
-#include <EffekseerRendererCommon/EffekseerRenderer.IndexBufferBase.h>
 #include <EffekseerRendererCommon/EffekseerRenderer.VertexBufferBase.h>
 #include <EffekseerRendererCommon/EffekseerRenderer.ShaderBase.h>
 #include <EffekseerRendererCommon/EffekseerRenderer.RenderStateBase.h>
